@@ -6,7 +6,23 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/"
 }
 
+
+
 function App() {
+
+  const dateBuilder = (e) => {
+let months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+let days = [ 'Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
+
+let day = days[e.getDay()];
+let date = e.getDate();
+let month = months[e.getMonth()];
+let year = e.getFullYear();
+
+return `${day} ${date} ${month} ${year}`
+
+
+  }
   return (
     <div className="app ">
       <section>
@@ -15,7 +31,13 @@ function App() {
         </div>
         <div className="location-box">
           <div className="location"> Ilorin City, Nigeria</div>
-          <div className="date"></div>
+          <div className="date">{dateBuilder(new Date())}</div>
+          <div className="weather-wrapper">
+            <div className="temp">
+              15deg
+            </div>
+            <div className="weather">Sunny</div>
+          </div>
 
         </div>
 
