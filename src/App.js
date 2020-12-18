@@ -8,10 +8,15 @@ const api = {
 
 function App() {
   return (
-    <div className="App">
+    <div className="app ">
       <section>
         <div className="search-box">
-          <input type="text" className="search-box" placeholder="search..." />
+          <input type="text" className="search-bar" placeholder="search..." />
+        </div>
+        <div className="location-box">
+          <div className="location"> Ilorin City, Nigeria</div>
+          <div className="date"></div>
+
         </div>
 
       </section>
