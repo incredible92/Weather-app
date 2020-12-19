@@ -19,7 +19,7 @@ const search = e => {
     .then(result =>{
       setWeather(result);
       setQuery('');
-      console.log(result)
+      console.log(weather)
       })
   }
 }
@@ -39,7 +39,7 @@ return `${day} ${date} ${month} ${year}`
 
   }
   return (
-    <div className="app ">
+    <div className="app warm ">
       <section>
         <div className="search-box">
           <input
@@ -55,7 +55,7 @@ return `${day} ${date} ${month} ${year}`
           <div className="location"> Ilorin City, Nigeria.</div>
           <div className="date">{dateBuilder(new Date())}</div>
           <div className="weather-wrapper">
-            <div className="temp"> 15
+            <div className="temp"> 35
             <span>&deg;C</span>
              
             </div>
