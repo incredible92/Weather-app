@@ -39,7 +39,7 @@ return `${day} ${date} ${month} ${year}`
 
   }
   return (
-    <div className="app warm ">
+    <div className="app ">
       <section>
         <div className="search-box">
           <input
@@ -52,14 +52,14 @@ return `${day} ${date} ${month} ${year}`
            />
         </div>
         <div className="location-box">
-          <div className="location"> Ilorin City, Nigeria.</div>
+          <div className="location"> Lagos City, Nigeria.</div>
           <div className="date">{dateBuilder(new Date())}</div>
           <div className="weather-wrapper">
-            <div className="temp"> 35
+            <div className="temp"> 20
             <span>&deg;C</span>
              
             </div>
-            <div className="weather">Sunny</div>
+            <div className="weather">cold</div>
           </div>
 
         </div>
