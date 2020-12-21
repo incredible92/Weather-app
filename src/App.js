@@ -1,4 +1,4 @@
-import react, {useState} from 'react';
+import  {useState} from 'react';
 import './App.css';
 
 const api = {
@@ -9,18 +9,21 @@ const api = {
 
 
 function App() {
-const [query, setQuery] = useState('');
+// const [query, setQuery] = useState('lagos');
 const [weather, setWeather] = useState('');
 
 const search = e => {
+  
   if (e.key === "Enter") {
-    fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-    .then(res => res.json())
-    .then(result =>{
+    const city = (e.target.value).trim()
+    e.target.value = ''
+    // if(!city) return null
+    fetch(`${api.base}weather?q=${city}&appid=${api.key}`)
+    .then(res => (res.json()))
+    .then(result =>{   
       setWeather(result);
-      setQuery('');
-      console.log(weather)
-      })
+      console.log(weather);
+    })
   }
 }
 
@@ -39,15 +42,13 @@ return `${day} ${date} ${month} ${year}`
 
   }
   return (
-    <div className="app ">
+    <div className={`app ${ weather.temp==='warm'? 'warm' : '' }0`}>
       <section>
         <div className="search-box">
           <input
            type="text"
             className="search-bar" 
             placeholder="search..." 
-            onChange={e => setQuery(e.target.value)}
-            value={query}
             onKeyPress={search}
            />
         </div>
