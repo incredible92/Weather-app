@@ -52,24 +52,21 @@ function App() {
             onKeyPress={search}
           />
         </div>
-        {(typeof weather.section != "undefined") ? (
-          <div>
+       
 <div className="location-box">
           <div className="location"> Lagos City, Nigeria.</div>
           <div className="date">{dateBuilder(new Date())}</div>
           <div className="weather-wrapper">
             <div className="temp">
-              {Math.round (weather.section.temp)} 25
+               25
             <span>&deg;C</span>
 
             </div>
-            <div className="weather">{weather.weather[0].section}</div>
+            <div className="weather"></div>
           </div>
 
         </div>
-          </div>
-        
-) : ("") }
+         
       </section>
     </div>
   );
